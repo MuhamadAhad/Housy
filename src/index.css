@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family:  'Droid Sans','Fira Sans','Ubuntu','Segoe UI',-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+     'Cantarell',   'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

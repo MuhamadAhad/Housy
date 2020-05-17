@@ -188,19 +188,6 @@ class Transaction extends Component {
     this.props.getTrans(id);
   };
 
-  getDuration = (typeRent, checkin, checkout) => {
-    if (typeRent === "years") {
-      const result = countByYear(checkin, checkout);
-      return result;
-    } else if (typeRent === "month") {
-      const result = countByMonth(checkin, checkout);
-      return result;
-    } else if (typeRent === "day") {
-      const result = countDay(checkin, checkout);
-      return result;
-    }
-  };
-
   render() {
     const { transaction } = this.props;
     const resultYear =

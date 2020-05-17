@@ -240,23 +240,20 @@ class TransactionPage extends Component {
     return result;
   }
 
-  getDuration = (typeRent, checkin, checkout) => {
-    if (typeRent === "years") {
-      return countByYear(checkin, checkout);
-    } else if (typeRent === "month") {
-      return countByMonth(checkin, checkout);
-    } else if (typeRent === "day") {
-      return countDay(checkin, checkout);
-    }
-  };
-
   render() {
     const { transaction } = this.props;
-    const duration = this.getDuration(
-      transaction && transaction.House && transaction.House.typeRent,
-      transaction && transaction.checkIn,
-      transaction && transaction.checkOut
-    );
+    const resultYear =
+      transaction && transaction.House && transaction.House.typeRent === "year"
+        ? countByYear(transaction.checkIn, transaction.checkOut)
+        : "";
+    const resultMonth =
+      transaction && transaction.House && transaction.House.typeRent === "month"
+        ? countByMonth(transaction.checkIn, transaction.checkOut)
+        : "";
+    const resultDay =
+      transaction && transaction.House && transaction.House.typeRent === "day"
+        ? countDay(transaction.checkIn, transaction.checkOut)
+        : "";
     const date = new Date(transaction && transaction.createdAt);
     const checkIn = FormatDate.convertDate(transaction && transaction.checkIn);
     const checkOut = FormatDate.convertDate(
@@ -433,7 +430,7 @@ class TransactionPage extends Component {
                 </td>
                 <td>
                   <strong>
-                    {duration}{" "}
+                    : {` ${resultYear}${resultMonth}${resultDay}`}{" "}
                     {transaction &&
                       transaction.House &&
                       transaction.House.typeRent}

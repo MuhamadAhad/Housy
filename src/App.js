@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import DetailProperty from "./Pages/DetailProperty";
 import DetailProfile from "./Pages/DetailProfile";
@@ -14,25 +14,22 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/detailproperty/:id" component={DetailProperty} />
-          <Route exact path="/detailprofile">
-            <DetailProfile />
-          </Route>
-          <Route exact path="/bookingpayment" component={BookingPayment} />
-          <Route exact path="/historypayment" component={HistoryPayment} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/detailproperty/:id" component={DetailProperty} />
+        <Route exact path="/detailprofile" component={DetailProfile} />
 
-          <Route exact path="/addproperty" component={AddProperty} />
-          <Route exact path="/listtransaction" component={ListTransaction} />
-          <Route
-            exact
-            path="/historytransaction"
-            component={HistoryTransaction}
-          />
+        <Route exact path="/bookingpayment" component={BookingPayment} />
+        <Route exact path="/historypayment" component={HistoryPayment} />
 
-          <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
-        </Switch>
+        <Route exact path="/addproperty" component={AddProperty} />
+        <Route exact path="/listtransaction" component={ListTransaction} />
+        <Route
+          exact
+          path="/historytransaction"
+          component={HistoryTransaction}
+        />
+
+        <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
       </Router>
     );
   }

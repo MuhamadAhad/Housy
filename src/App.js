@@ -29,9 +29,8 @@ class App extends Component {
             path="/historytransaction"
             component={HistoryTransaction}
           />
-
-          <Route render={() => <h3>404 NOT FOUND</h3>} />
         </div>
+        <Route render={() => <h3>404 NOT FOUND</h3>} />
       </Router>
     );
   }

@@ -30,7 +30,7 @@ class App extends Component {
             component={HistoryTransaction}
           />
 
-          <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
+          <Route render={() => <h3>404 NOT FOUND</h3>} />
         </div>
       </Router>
     );

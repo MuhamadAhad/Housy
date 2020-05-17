@@ -15,22 +15,22 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" children={Home} />
-          <Route exact path="/detailproperty/:id" children={DetailProperty} />
-          <Route exact path="/detailprofile" children={DetailProfile} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/detailproperty/:id" component={DetailProperty} />
+          <Route exact path="/detailprofile" component={DetailProfile} />
 
-          <Route exact path="/bookingpayment" children={BookingPayment} />
-          <Route exact path="/historypayment" children={HistoryPayment} />
+          <Route exact path="/bookingpayment" component={BookingPayment} />
+          <Route exact path="/historypayment" component={HistoryPayment} />
 
-          <Route exact path="/addproperty" children={AddProperty} />
-          <Route exact path="/listtransaction" children={ListTransaction} />
+          <Route exact path="/addproperty" component={AddProperty} />
+          <Route exact path="/listtransaction" component={ListTransaction} />
           <Route
             exact
             path="/historytransaction"
-            children={HistoryTransaction}
+            component={HistoryTransaction}
           />
 
-          <Route exact path="*" children={() => "404 FILE NOT FOUND"} />
+          <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
         </Switch>
       </Router>
     );

@@ -14,22 +14,24 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/detailproperty/:id" component={DetailProperty} />
-        <Route exact path="/detailprofile" component={DetailProfile} />
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/detailproperty/:id" component={DetailProperty} />
+          <Route exact path="/detailprofile" component={DetailProfile} />
 
-        <Route exact path="/bookingpayment" component={BookingPayment} />
-        <Route exact path="/historypayment" component={HistoryPayment} />
+          <Route exact path="/bookingpayment" component={BookingPayment} />
+          <Route exact path="/historypayment" component={HistoryPayment} />
 
-        <Route exact path="/addproperty" component={AddProperty} />
-        <Route exact path="/listtransaction" component={ListTransaction} />
-        <Route
-          exact
-          path="/historytransaction"
-          component={HistoryTransaction}
-        />
+          <Route exact path="/addproperty" component={AddProperty} />
+          <Route exact path="/listtransaction" component={ListTransaction} />
+          <Route
+            exact
+            path="/historytransaction"
+            component={HistoryTransaction}
+          />
 
-        <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
+          <Route exact path="*" component={() => "404 FILE NOT FOUND"} />
+        </div>
       </Router>
     );
   }

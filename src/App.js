@@ -29,6 +29,7 @@ class App extends Component {
             path="/historytransaction"
             component={HistoryTransaction}
           />
+          
         </Switch>
       </Router>
     );

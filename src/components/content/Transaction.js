@@ -191,15 +191,27 @@ class Transaction extends Component {
   render() {
     const { transaction } = this.props;
     const resultYear =
-      transaction && transaction.House && transaction.House.typeRent === "year"
+      transaction &&
+      transaction.House &&
+      transaction.checkIn &&
+      transaction.checkOut &&
+      transaction.House.typeRent === "year"
         ? countByYear(transaction.checkIn, transaction.checkOut)
         : "";
     const resultMonth =
-      transaction && transaction.House && transaction.House.typeRent === "month"
+      transaction &&
+      transaction.House &&
+      transaction.checkIn &&
+      transaction.checkOut &&
+      transaction.House.typeRent === "month"
         ? countByMonth(transaction.checkIn, transaction.checkOut)
         : "";
     const resultDay =
-      transaction && transaction.House && transaction.House.typeRent === "day"
+      transaction &&
+      transaction.House &&
+      transaction.checkIn &&
+      transaction.checkOut &&
+      transaction.House.typeRent === "day"
         ? countDay(transaction.checkIn, transaction.checkOut)
         : "";
     const date = new Date(transaction && transaction.createdAt);
@@ -253,6 +265,7 @@ class Transaction extends Component {
                   <br />
                   {transaction &&
                     transaction.House &&
+                    transaction.House.City &&
                     transaction.House.City.name}
                 </p>
               </small>
@@ -315,6 +328,7 @@ class Transaction extends Component {
                 <h6 style={{ marginBottom: 0 }}>Amenities</h6>
                 {transaction &&
                   transaction.House &&
+                  transaction.House.amenities &&
                   transaction.House.amenities.map((rec, idx) => {
                     return (
                       <div key={idx}>
@@ -328,6 +342,7 @@ class Transaction extends Component {
                 <small className="text-muted">
                   {transaction &&
                     transaction.House &&
+                    transaction.House.typeRent &&
                     transaction.House.typeRent.toUpperCase()}
                 </small>
               </div>
